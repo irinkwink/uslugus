@@ -1,0 +1,30 @@
+.footer {
+  padding: 55px 0;
+
+  &__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    'logo .'
+    'copyright contacts';
+    gap: 14px;
+  }
+
+  &__logo{
+    grid-area: logo;
+  }
+
+  &__copyright{
+    grid-area: copyright;
+    place-self: end start;
+  }
+
+  &__contacts{
+    grid-area: contacts;
+    place-self: end end;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+}
