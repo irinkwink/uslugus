@@ -1,37 +1,46 @@
-.person {
-
-  // .person__form
-
-  &__form {
-  }
-}
 .form {
 
   &_add-review {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: min-content;
-    gap: 16px 12px;
   }
 
+  &_sign-in {
+  }
+
+  &__fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 12px;
+    margin-bottom: 32px;
+
+    &_user {
+      margin-bottom: 46px;
+    }
+
+    &_service {
+      margin-bottom: 46px;
+    }
+
+    &_password {
+      margin-bottom: 36px;
+    }
+  }
 
   &__label {
+    flex: 1 1 310px;
     display: flex;
     flex-direction: column;
     gap: 4px;
+    cursor: pointer;
 
     &_textarea {
       grid-column: span 2;
     }
   }
 
-
   &__text {
     font-weight: 300;
     line-height: 19px;    
   }
-
-  // .form__input
 
   &__input {
     background: $light;
@@ -40,29 +49,83 @@
     height: 46px;
     padding: 5px 14px;
     border: none;
+
+    ::placeholder {
+      color: $placeholder;
+    }
+
+    &_password {
+      padding-right: 44px;
+    }
   }
 
-  // .form__textarea
+  &__select {
+    background: $light;
+    border-radius: 8px;
+    width: 100%;
+    height: 46px;
+    padding: 5px 14px;
+    border: none;
+  }
+
+  &__option {
+    color: $select;
+  }
+
+  &__price {
+    display: flex;
+    gap: 5px;
+
+    &_select {
+      width: 105px;
+    }
+  }
 
   &__textarea {
     width: 100%;
-    height: 80px;
+    min-height: 80px;
     border: none;
     padding: 14px;
     background: $light;
     border-radius: 8px;
-    margin-bottom: 16px;
+  }
+
+  &__password {
+    position: relative;
+    width: 100%;
+  }
+
+  &__password-eye {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background-image: url('img/eye-hide.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+
+    &_show {
+      background-image: url('img/eye-show.svg');
+    }
   }
 
   &__wrapper {
-    grid-column: span 2;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
   }
 
   &__rating {
+    margin-left: auto;
     margin-right: 24px;
+  }
+
+  &__avatar {
+
   }
 
   &__submit {
@@ -73,6 +136,15 @@
 
     &:hover {
       background-color: $active;
+    }
+
+    &_sign-up {
+      align-self: flex-end;
+    }
+
+    &_sign-in {
+      width: 86px;
+      margin-left: auto;
     }
   }
 }

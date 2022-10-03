@@ -366,20 +366,22 @@
         </div>
   
         <form class="person__form form form_add-review">
-          <label class="form__label">
-            <span class="form__text">Имя</span>
-            <input class="form__input" type="text">
-          </label>
-  
-          <label class="form__label">
-            <span class="form__text">Телефон</span>
-            <input class="form__input" type="text">
-          </label>
-  
-          <label class="form__label form__label_textarea">
-            <span class="form__text">Комментарий</span>
-            <textarea class="form__textarea"></textarea>
-          </label>
+          <fieldset class="form__fieldset">
+            <label class="form__label">
+              <span class="form__text">Имя</span>
+              <input class="form__input" type="text">
+            </label>
+    
+            <label class="form__label">
+              <span class="form__text">Телефон</span>
+              <input class="form__input" type="text">
+            </label>
+    
+            <label class="form__label form__label_textarea">
+              <span class="form__text">Комментарий</span>
+              <textarea class="form__textarea"></textarea>
+            </label>
+          </fieldset>
 
           <div class="form__wrapper"> 
             <div class="form__rating rating">
@@ -410,8 +412,7 @@
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M18.75 5.25L5.25 18.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M18.75 18.75L5.25 5.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            
+          </svg>
         </button>
       </div>
     </div>
@@ -422,7 +423,7 @@
       <h2 class="modal__title">Регистрация специалиста</h2>
 
       <form class="form form-sign-up">
-        <fieldset>
+        <fieldset class="form__fieldset form__fieldset_user">
           <label class="form__label">
             <span class="form__text">Имя</span>
             <input class="form__input" type="text">
@@ -444,7 +445,7 @@
           </label>
         </fieldset>
 
-        <fieldset>
+        <fieldset class="form__fieldset form__fieldset_service">
           <label class="form__label">
             <span class="form__text">Категория</span>
             <select class="form__select" name="" id="">
@@ -460,56 +461,67 @@
             </select>
           </label>
 
-          <p class="form__label">
+          <div class="form__label">
             <label class="form__text" for="price">Цена, руб.</label>
-            <select class="form__select" name="" id="">
-              <option class="form__option" value="from">от</option>
-              <option class="form__option" value="exatly">равно</option>
-              <option class="form__option" value="up to">до</option>
-            </select>
+            <div class="form__price">
+              <select class="form__select form__price_select" name="" id="">
+                <option class="form__option" value="from">от</option>
+                <option class="form__option" value="exatly">равно</option>
+                <option class="form__option" value="up to">до</option>
+              </select>
 
-            <input type="number" id="price" placeholder="стоимость услуги">
-          </p>
+              <input class="form__input" type="number" min="0" id="price" placeholder="стоимость услуги">
+            </div>
+          </div>
 
-          <label class="form__label">
+          <label class="form__label form__label_textarea">
             <span class="form__text">Описание услуг</span>
             <textarea class="form__textarea"></textarea>
           </label>
         </fieldset>
 
-        <fieldset>
-          <p class="form__label">
+        <fieldset class="form__fieldset form__fieldset_password">
+          <div class="form__label">
             <label class="form__text" for="password">Пароль</label>
-            <span>
-              <input class="form__input" type="password" id="password">
-              <button class="form__password-eye" aria-label="Показать пароль"></button>
-            </span>
-          </p>
+            <div class="form__password">
+              <input class="form__input form__input_password" type="password" id="password">
+              <button class="form__password-eye" aria-label="Показать пароль" type="button"></button>
+            </div>
+          </div>
 
-          <p class="form__label">
+          <div class="form__label">
             <label class="form__text" for="password-repeat">Повторите пароль</label>
-            <span>
-              <input class="form__input" type="password" id="password-repeat">
-              <button class="form__password-eye" aria-label="Показать пароль"></button>
-            </span>
-          </p>
+            <div class="form__password">
+              <input class="form__input form__input_password" type="password" id="password-repeat">
+              <button class="form__password-eye form__password-eye_show" aria-label="Показать пароль"></button>
+            </div>
+          </div>
         </fieldset>
 
-        <div class="form__avatar avatar">
-          <label for="">
-            <span class="avatar__text">Установить аватар</span>
-            <span class="avatar__input-wrapper">
-              <input class="avatar__input" type="file" accept="image/png, image/jpeg">
-            </span>
-
-            <div class="avatar__result"></div>
-          </label>
+        <div class="form__wrapper">
+          <div class="form__avatar avatar">
+            <label class="avatar__label">
+              <span class="avatar__text">Установить аватар</span>
+              <span class="avatar__input-wrapper">
+                <input class="avatar__input" type="file" accept="image/png, image/jpeg">
+                <span class="avatar__input-text">Загрузить файл</span>
+              </span>
+  
+              <div class="avatar__result"></div>
+            </label>
+          </div>
+  
+          <button class="form__submit form__submit_sign-up">Зарегистрироваться</button>
         </div>
 
-        <buttom class="form__submit">Зарегистрироваться</buttom>
       </form>
 
-      <button class="modal__close"></button>
+      <button class="modal__close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.75 5.25L5.25 18.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M18.75 18.75L5.25 5.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
     </div>
   </div>
 
@@ -517,26 +529,31 @@
     <div class="modal__body">
       <h2 class="modal__title">Вход в систему</h2>
 
-      <form class="form form-sign-in">
-        <fieldset>
+      <form class="form form_sign-in">
+        <fieldset class="form__fieldset">
           <label class="form__label">
             <span class="form__text">E-mail</span>
             <input class="form__input" type="email">
           </label>
 
-          <p class="form__label">
-            <label class="form__text" for="password__sign-in">Пароль</label>
-            <span>
-              <input class="form__input" type="password" id="password__sign-in">
-              <button class="form__password-eye" aria-label="Показать пароль"></button>
-            </span>
-          </p>
+          <div class="form__label">
+            <label class="form__text" for="password-sign-in">Пароль</label>
+            <div class="form__password">
+              <input class="form__input form__input_password" type="password" id="password">
+              <button class="form__password-eye" aria-label="Показать пароль" type="button"></button>
+            </div>
+          </div>
         </fieldset>
 
-        <buttom class="form__submit">Войти</buttom>
+        <button class="form__submit form__submit_sign-in">Войти</button>
       </form>
 
-      <button class="modal__close"></button>
+      <button class="modal__close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.75 5.25L5.25 18.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M18.75 18.75L5.25 5.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
     </div>
   </div>
 </body>
