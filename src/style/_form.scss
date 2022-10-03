@@ -1,0 +1,79 @@
+.person {
+
+  // .person__form
+
+  &__form {
+  }
+}
+.form {
+
+  &_add-review {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content;
+    gap: 16px 12px;
+  }
+
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    &_textarea {
+      grid-column: span 2;
+    }
+  }
+
+
+  &__text {
+    font-weight: 300;
+    line-height: 19px;    
+  }
+
+  // .form__input
+
+  &__input {
+    background: $light;
+    border-radius: 8px;
+    width: 100%;
+    height: 46px;
+    padding: 5px 14px;
+    border: none;
+  }
+
+  // .form__textarea
+
+  &__textarea {
+    width: 100%;
+    height: 80px;
+    border: none;
+    padding: 14px;
+    background: $light;
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+
+  &__wrapper {
+    grid-column: span 2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__rating {
+    margin-right: 24px;
+  }
+
+  &__submit {
+    background-color: $hover;
+    width: 198px;
+    height: 39px;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: $active;
+    }
+  }
+}
+

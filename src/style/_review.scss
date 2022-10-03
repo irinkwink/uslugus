@@ -1,0 +1,80 @@
+.review {
+
+
+  &__title {
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  // .review__list
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  // .review__item
+
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content;
+    padding: 14px;
+    border-radius: 8px;
+    background-color: $light;
+    gap: 8px;
+    min-height: 95px;
+  }
+
+  &__name {
+    font-weight: 400;
+  }
+
+  &__stars {
+    place-self: start end;
+  }
+
+  &__text {
+    grid-column: span 2;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    height: calc(19px * 2);
+
+    &_open {
+      display: block;
+      height: auto;
+    }
+  }
+
+  &__open {
+    position: relative;
+    font-size: 14px;
+
+    &::after {
+      content: '';
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      background-color: $text;
+    }
+
+    &_text {
+      place-self: end start;
+    }
+
+    &_list {
+      margin-left: auto;
+    }
+  }
+}
+

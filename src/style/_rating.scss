@@ -1,0 +1,12 @@
+.rating {
+  display: flex;
+  gap: 2px;
+
+  &__star {
+    color: transparent;
+
+    &:hover {
+      color: $hover;
+    }
+  }
+}

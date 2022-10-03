@@ -2,14 +2,18 @@
   display: grid;
   grid-template-areas: 
   'avatar present price'
-  '. . review';
+  'contacts contacts review';
 
   grid-template-columns: 50px 1fr max-content;
   gap: 20px 24px;
 
-  background-color: $lignt;
+  background-color: $light;
   padding: 24px;
   border-radius: 8px;
+
+  &_person {
+    gap: 40px 14px;
+  }
 
   &__avatar {
     grid-area: avatar;
@@ -21,6 +25,7 @@
 
   &__title {
     font-size: 24px;
+    font-weight: 400px;
     line-height: 28px;
     margin-bottom: 10px;
   }
@@ -31,24 +36,42 @@
 
   &__price {
     grid-area: price;
-    text-align: right;
+    place-self: start end;
     font-size: 24px;
+  }
+
+  &__contacts {
+    grid-area: contacts;
+    place-self: end start;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-weight: 300;
+  }
+
+  &__link {
+    position: relative;
+    padding-left: 33px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 24px;
+
+
+    &_phone {
+      background-image: url('img/phone.svg');
+    }
+
+    &_email {
+      background-image: url('img/email.svg');
+    }
+
   }
 
   &__review {
     grid-area: review;
+    place-self: end end;
     display: flex;
     gap: 16px;
-  }
-
-  &__stars {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-  }
-
-  &__star {
-
   }
 
   &__count-review {
