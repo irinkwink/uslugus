@@ -1,17 +1,39 @@
 .footer {
   padding: 55px 0;
 
+  @include tablet {
+    padding-bottom: 30px;
+  }
+
+  @include mobile {
+    padding-bottom: 14px;
+  }
+
+
   &__container{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
-    'logo .'
-    'copyright contacts';
+      'logo .'
+      'copyright contacts';
     gap: 14px;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+        'logo'
+        'contacts'
+        'copyright';
+        gap: 33px;
+    }
   }
 
   &__logo{
     grid-area: logo;
+
+    @include mobile {
+      margin-bottom: 11px;
+    }
   }
 
   &__copyright{
@@ -25,6 +47,10 @@
     display: flex;
     flex-direction: column;
     gap: 7px;
+
+    @include mobile {
+      place-self: auto;
+    }
   }
 
 }

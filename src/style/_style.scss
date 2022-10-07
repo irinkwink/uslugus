@@ -76,4 +76,12 @@ fieldset {
   max-width: calc(1180px + 40px);
   padding: 0 20px;
   margin: 0 auto;
+
+  @include laptop {
+    max-width: calc(780px + 40px);
+  }
+
+  @include tablet {
+    max-width: calc(580px + 40px);
+  }
 }
