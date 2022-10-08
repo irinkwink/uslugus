@@ -1,0 +1,159 @@
+@import "~choices.js/public/assets/styles/choices.min.css";
+
+.choices {
+  position: relative;
+  z-index: 50;
+  margin: 0;
+  border-radius: 8px;
+  // overflow: visible;
+}
+
+.choices:focus {
+  outline-color: -webkit-focus-ring-color;
+  outline-style: auto;
+  outline-width: 1px;
+}
+
+.choices.is-open {
+  outline: none;
+}
+
+.form__select.form__select_category {
+  user-select: none;
+}
+
+.choices__inner {
+  display: flex;
+  align-items: center;
+  height: 46px;
+  border-radius: 8px;
+  background-color: $light;
+  width: 100%;
+  padding: 5px 14px;
+  border: none;
+  margin-bottom: 0;
+}
+
+.is-open .choices__inner  {
+  border-radius: 8px;
+}
+
+.choices[data-type*=select-one] .choices__inner {
+  padding-bottom: 5px;
+}
+
+.choices[data-type*=select-one]::after {
+  width: 46px;
+  height: 46px;
+  top: 0;
+  right: 0;
+  margin: 0;
+  background-image: url('img/down.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  border: none;
+  transition: transform 0.2s ease-in-out;
+  z-index: 65;
+}
+
+.choices[data-type*=select-one].is-open::after {
+  transform: rotate(180deg);
+  margin: 0;
+  user-select: none;
+}
+
+.choices__list--single {
+  padding: 0;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.choices__list--dropdown,
+.choices__list[aria-expanded] {
+  border: none;
+  border-radius: 8px;
+  // background-color: red;
+  margin-top: -46px;
+  z-index: 60;
+}
+
+.form__select_category .choices__list--dropdown {
+  padding: 0 0 18px;
+  // visibility: visible;
+}
+
+.form__select_price .choices__list--dropdown {
+  padding: 9px 0;
+}
+
+.choices__list--dropdown .choices__item,
+.choices__list[aria-expanded] .choices__item {
+  padding: 5px 14px;
+  font-family: inherit;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.form__select_category .choices__list--dropdown .choices__item:first-child,
+.form__select_category .choices__list[aria-expanded] .choices__item:first-child {
+  padding: 14px;
+}
+
+.form__select_category .choices__list--dropdown .choices__item,
+.form__select_category .choices__list[aria-expanded] .choices__item {
+  padding-left: 44px;
+}
+
+.form__select_category .choices__list--dropdown .choices__item::before,
+.form__select_category .choices__list[aria-expanded] .choices__item::before {
+  content: '';
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.choices__item[data-value=photographer]::before {
+  background-image: url('img/photographer.svg')
+}
+
+.choices__item[data-value=makeup]::before {
+  background-image: url('img/makeup.svg')
+}
+
+.choices__item[data-value=masseur]::before {
+  background-image: url('img/masseur.svg')
+}
+
+.choices__item[data-value=handyman]::before {
+  background-image: url('img/handyman.svg')
+}
+
+.choices__item[data-value=cosmetologist]::before {
+  background-image: url('img/cosmetologist.svg')
+}
+
+.choices__item[data-value=electrician]::before {
+  background-image: url('img/electrician.svg')
+}
+
+.choices__item[data-value=manicurist]::before {
+  background-image: url('img/manicurist.svg')
+}
+
+.choices__item[data-value=plumber]::before {
+  background-image: url('img/plumber.svg')
+}
+
+.choices__item[aria-selected=true]  {
+  background-size: 0;
+}
+

@@ -76,6 +76,10 @@
     padding: 5px 14px;
     border: none;
 
+    &_price {
+      min-width: 105px;
+    }
+
     @include mobile {
       font-size: 14px;
     }
@@ -88,10 +92,6 @@
   &__price {
     display: flex;
     gap: 5px;
-
-    &_select {
-      width: 105px;
-    }
   }
 
   &__textarea {

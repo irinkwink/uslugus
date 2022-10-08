@@ -1,5 +1,9 @@
 .category {
+  position: relative;
+
   &__title {
+    position: relative;
+    z-index: 5;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -7,7 +11,7 @@
     width: 180px;
 
     @include tablet {
-      margin-bottom: 0;
+      // margin-bottom: 0;
     }
 
     @include mobile {
@@ -19,6 +23,16 @@
 
     @include tablet {
       display: none;
+      position: absolute;
+      z-index: 3;
+      background: #FFFFFF;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      padding: 60px 16px 16px;
+      top: -16px;
+      left: -16px;
+      width: calc(180px + 16px + 12px);
+
     }
   }
 

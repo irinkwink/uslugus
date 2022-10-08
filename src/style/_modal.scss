@@ -1,10 +1,12 @@
 .modal {
   position: fixed;
   inset: 0;
+  display: none;
   padding: 40px;
   overflow-y: auto;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
 
   @include tablet {
     padding: 20px;
@@ -12,18 +14,6 @@
 
   @include mini {
     padding: 0;
-  }
-
-  &_person {
-    display: none;
-  }
-
-  &_sign-up {
-    // display: none;
-  }
-
-  &_sign-in {
-    display: none;
   }
 
 
