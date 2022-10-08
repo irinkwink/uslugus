@@ -72,11 +72,10 @@
 
 .choices__list--dropdown,
 .choices__list[aria-expanded] {
+  z-index: 60;
   border: none;
   border-radius: 8px;
-  // background-color: red;
   margin-top: -46px;
-  z-index: 60;
 }
 
 .form__select_category .choices__list--dropdown {

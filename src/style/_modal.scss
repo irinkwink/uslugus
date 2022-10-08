@@ -27,6 +27,10 @@
     background-color: $back;
     padding: 24px 20px 48px;
 
+    @include mini {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 
   &__title {
