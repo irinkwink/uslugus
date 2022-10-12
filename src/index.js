@@ -2,7 +2,10 @@ import './index.html';
 import './index.scss';
 import { avatarController } from './modules/avatarController';
 import { choicesController } from './modules/choicesController';
+import { getCategory } from './modules/getCategory';
 import { modalController } from './modules/modalController';
+import { renderList } from './modules/renderList';
+import { searchControl } from './modules/searchControl';
 import { selectController } from './modules/selectController';
 import { showPassword } from './modules/showPassword';
 
@@ -72,6 +75,10 @@ const init = () => {
     inputFale: '.avatar__input',
     uploadResult: '.avatar__result',
   });
+
+  getCategory();
+  renderList();
+  searchControl();
 
 }
 

@@ -37,7 +37,7 @@ $select: #C0C0C0;
 
 
 @mixin mini {
-  @media (max-width: 360px) {
+  @media (max-width: 380px) {
     @content;
   }
 }
