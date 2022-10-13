@@ -56,16 +56,13 @@ const init = () => {
     }
   });
 
-  // modalPerson.onOpenModal(() => {
-  //   console.log('Hi, friends');
-  // })
-
   selectController({
     openBtn: '.category__title',
     openBlock: '.category__list',
     closeBtn: '.category__btn',
     handlerChange: (value) => {
       console.log(value);
+      renderList(undefined, value)
     },
   });
 
